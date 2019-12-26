@@ -1,0 +1,17 @@
+ol > li > ol {
+  list-style: lower-alpha;
+}
+
+.admonition.tip,
+.admonition.note {
+  padding: 10px;
+  background: #e0ef92;
+}
+
+.admonition-title {
+  font-weight: bold;
+}
+
+code {
+  color: #c15041;
+}
