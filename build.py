@@ -59,7 +59,7 @@ def standard_page(title, body):
             body,
             h.footer()[
                 h.safe(
-                    r'<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Esta obra está licensiada sob uma <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licença Internacional Creative Commons Attribution-ShareAlike 4.0</a>.'
+                    r'<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Esta obra está licenciada sob uma <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licença Internacional Creative Commons Attribution-ShareAlike 4.0</a>.'
                 ),
                 h.p(h.a("View Source", href=SRC_URL)),
             ],
