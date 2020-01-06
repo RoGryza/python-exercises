@@ -73,11 +73,7 @@ def index(categories):
 
     return standard_page(
         "Exercícios de Python",
-        h.ul(
-            children=[
-                render_category(cat) for cat in sorted(categories, key=lambda c: c.name)
-            ]
-        ),
+        h.ul(children=[render_category(cat) for cat in categories]),
     )
 
 
