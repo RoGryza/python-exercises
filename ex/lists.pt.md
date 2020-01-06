@@ -38,10 +38,10 @@
             [1, "a", 2, "b"]
 
         !!! note "Nota"
-            O python tem a função https://docs.python.org/3/library/functions.html#zip que faz esta
-            operação com qualquer quantidade de listas. Não utilizá-la para este exercício.
+            O python tem a função https://docs.python.org/3/library/functions.html#zip que faz uma
+            operação similar com qualquer quantidade de listas. Não utilizá-la para este exercício.
 
-    2. Modifique a função anterior para que ela aceite listas de tamanho diferente e preencha com
+    2. Modifique a função anterior para que ela aceite listas de tamanhos diferentes e preencha com
        `None` os elementos que faltam da lista menor.
 
             :::pycon
