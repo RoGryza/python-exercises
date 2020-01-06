@@ -21,14 +21,14 @@ def main():
     categories = []
 
     with os.scandir("ex") as it:
-        for entry in it:
+        for entry in sorted(it, key=lambda e: e.name):
             if not entry.is_file() or not entry.name.endswith(".md"):
                 print(f"WARNING: skipping file {entry.path}")
                 continue
 
             with open(entry.path) as f:
                 category = Category(
-                    name=entry.name.split(".")[0],
+                    name=entry.name.split(".")[0][3:],
                     display_name=f.readline()[2:].strip(),
                 )
                 categories.append(category)
