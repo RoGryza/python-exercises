@@ -11,19 +11,32 @@
 
 1. 
 
-    1. Escreva um programa que, dado um número `n`, imprima o seguinte padrão:
+    1. Escreva um programa que, dado um número `n`, imprima-o `n` vezes numa única linha:
+    
+            N: 4
+            4444
             
-            Tamanho: 4
+        !!! note "Nota"
+            O operador `*` entre strings e números replica a string várias vezes. Não utilizá-lo para
+            este exercício.
+            
+        !!! tip "Dica"
+            Você pode utilizar o parâmetro `end` da função print para não quebrar a linha:
+             
+                :::python
+                print('1', end='')
+                print('2', end='')
+                # Imprime 12
+
+    2. Adapte o programa anterior para imprimir as linhas de todos os números até `n`:
+            
+            N: 4
             1
             22
             333
             4444
-    
-        !!! note "Nota"
-            O operador `*` entre strings e números replica a string várias vezes. Não utilizá-lo para
-            este exercício.
 
-    2. Modifique o programa anterior para incrementar os números na mesma linha:
+    3. Modifique o programa anterior para incrementar os números na mesma linha:
   
             Tamanho: 10
             1
