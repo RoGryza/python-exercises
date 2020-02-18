@@ -10,6 +10,9 @@ jobs:
       - uses: actions/checkout@v2
       - uses: cachix/install-nix-action@v6
       - uses: cachix/cachix-action@v3
+        with:
+          name: rogryza
+          signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
       - run: tar czf python-exercises.tar.gz -C result static
       - id: get_changelog
         run: |
