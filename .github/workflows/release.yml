@@ -1,0 +1,32 @@
+name: "Release"
+on:
+  push:
+    tags:
+      - 'v*'
+name: release
+steps:
+  - uses: actions/checkout@v2
+  - uses: cachix/install-nix-action@v6
+  - uses: cachix/cachix-action@v3
+  - run: tar czf python-exercises.tar.gz -C result static
+  - id: get_changelog
+    run: |
+      echo "::set-output name=changelog::$(awk '/# '$GITHUB_REF'/{f=1;next} /#/{f=0} f' CHANGELOG.md | sed '/^[[:space:]]*$/d')"
+  - id: create_release
+    uses: actions/create-release@v1
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    with:
+      tag_name: ${{ github.ref }}
+      release_name: ${{ github.ref }}
+      body: ${{ steps.get_changelog.outputs.changelog }}
+      draft: false
+      prerelease: false
+  - uses: actions/upload-release-action@v1
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    with:
+      upload_url: ${{ steps.create_release.outputs.upload_url }}
+      asset_path: ./python-exercises.tar.gz
+      asset_name: python-exercises.tar.gz
+      asset_content_type: application/gzip
