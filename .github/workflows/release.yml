@@ -16,7 +16,7 @@ jobs:
       - run: tar czf python-exercises.tar.gz -C result static
       - id: get_changelog
         run: |
-          echo "::set-output name=changelog::$(awk '/# '$GITHUB_REF'/{f=1;next} /#/{f=0} f' CHANGELOG.md | sed '/^[[:space:]]*$/d')"
+          echo "::set-output name=changelog::$(awk '/# '${GITHUB_REF##*/}'/{f=1;next} /#/{f=0} f' CHANGELOG.md | sed '/^[[:space:]]*$/d')"
       - id: create_release
         uses: actions/create-release@v1
         env:
