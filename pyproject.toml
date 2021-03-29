@@ -8,7 +8,7 @@ license = "CC By-SA"
 [tool.poetry.dependencies]
 python = "^3.8"
 markdown = "^3.1.1"
-pygments = "^2.5.2"
+pygments = "^2.7.4"
 hyperpython = "^1.1.1"
 
 [tool.poetry.dev-dependencies]
